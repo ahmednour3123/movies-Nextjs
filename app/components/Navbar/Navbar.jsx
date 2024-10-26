@@ -38,8 +38,8 @@ const Navbar = () => {
 
   return (
     <nav
-    className={`z-50 transition-all duration-300 ${
-      isScrolled ? "bg-gray-800 shadow-lg w-screen" : "bg-transparent w-full"
+    className={`z-50 transition-all duration-300 bg-gray-800 ${
+      isScrolled ? " shadow-lg w-screen" : "bg-transparent w-full"
     }`}
   >
     <div className="max-w-screen-2xl mx-auto flex items-center justify-between p-4">
