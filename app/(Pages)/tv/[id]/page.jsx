@@ -39,46 +39,37 @@ const TvShowsDetails = async ({ params }) => {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
-        <div className="relative z-20 flex flex-col items-center justify-center h-full px-6 py-8 md:flex-row md:justify-start">
+        <div className="relative z-20 flex flex-col items-center justify-center h-full px-4 py-6 md:flex-row md:justify-start">
           <div className="animate-fade-in mb-6 md:mb-0 md:mr-8">
             <Image
               src={imageUrl}
               alt={name}
-              width={300}
-              height={450}
-              className="rounded-lg shadow-lg"
+              width={180} // Smaller width for mobile
+              height={270} // Maintain aspect ratio
+              className="rounded-lg shadow-lg md:w-64 md:h-auto"
               style={{
                 objectFit: "cover",
               }}
             />
           </div>
-          <div className="text-left max-w-2xl animate-fade-in-delayed p-6 bg-black bg-opacity-50 rounded-lg">
-            <h1 className="text-4xl font-bold mb-4 text-amber-400">
+          <div className="text-left max-w-2xl animate-fade-in-delayed p-4 md:p-6 bg-black bg-opacity-50 rounded-lg w-full md:w-auto">
+            <h1 className="text-2xl md:text-4xl font-bold mb-2 md:mb-4 text-amber-400">
               {name} <span className="text-white">({year})</span>
             </h1>
-            <p className="text-lg mb-4">
-              <span className="font-bold text-amber-400 text-left">
-                Overview:
-              </span>{" "}
-              {overview}
+            <p className="text-sm md:text-lg mb-2 md:mb-4">
+              <span className="font-bold text-amber-400">Overview:</span> {overview}
             </p>
-            <p className="text-lg mb-4">
-              <span className="font-bold text-amber-400 text-left">
-                Date Released:
-              </span>{" "}
-              {release_date || first_air_date}
+            <p className="text-sm md:text-lg mb-2 md:mb-4">
+              <span className="font-bold text-amber-400">Date Released:</span> {release_date || first_air_date}
             </p>
-            <p className="text-lg mb-4">
-              <span className="font-bold text-amber-400 text-left">
-                Rating:
-              </span>{" "}
-              {vote_average ? vote_average.toFixed(1) : "N/A"}
+            <p className="text-sm md:text-lg mb-2 md:mb-4">
+              <span className="font-bold text-amber-400">Rating:</span> {vote_average ? vote_average.toFixed(1) : "N/A"}
             </p>
           </div>
         </div>
       </div>
-      <div className="py-8 bg-gray-900">
-        <DataCastSwiper id={id} mediaType="tv" />
+      <div className="py-6 md:py-8 bg-gray-900">
+        {/* <DataCastSwiper id={id} mediaType="tv" /> */}
       </div>
     </>
   );

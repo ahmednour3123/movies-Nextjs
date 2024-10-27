@@ -25,7 +25,7 @@ const Card = ({ item }) => {
 
   return (
     <Link href={`/${media_type}/${id}`} className="link ">
-      <div className="container">
+      <div className="container my-3">
         <div className="wrapper hover:opacity-80">
           <div
             className="banner-image "

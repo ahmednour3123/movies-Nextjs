@@ -66,25 +66,13 @@ const TrendingMovies = () => {
           onClick={handlePreviousPage}
           disabled={currentPage === 1}
         >
-          Previous
+          Prev
         </button>
 
-        {Array.from({ length: 10 }, (_, index) => index + 1).map((page) => (
-          <button
-            key={page}
-            className={`mx-1 px-3 py-1 rounded-lg ${
-              page === currentPage
-                ? "bg-blue-500 text-white"
-                : "bg-gray-300 text-gray-700"
-            }`}
-            onClick={() => handlePageChange(page)}
-          >
-            {page}
-          </button>
-        ))}
+    
 
         <button
-          className={`mx-1 px-3 py-1 rounded-lg ${
+          className={`mx-1 px-3 py-1  rounded-lg ${
             currentPage === totalPages
               ? "bg-gray-300 text-gray-700"
               : "bg-blue-500 text-white"

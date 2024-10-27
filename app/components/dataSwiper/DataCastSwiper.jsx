@@ -10,14 +10,14 @@ const DataCastSwiper = ({ id, mediaType }) => {
     setCastData(data);
   };
 
-  return (
-    <CastSwiper
-      endpoint={`https://api.themoviedb.org/3/${mediaType}/${id}/credits`}
-      // apiKey={process.env.APIKEY}
-      apiKey={process.env.NEXT_PUBLIC_APIKEY}
-      onDataChange={handleDataChange}
-    />
-  );
+//  return (
+    // <CastSwiper
+    //   endpoint={`https://api.themoviedb.org/3/${mediaType}/${id}/credits`}
+    //   // apiKey={process.env.APIKEY}
+    //   apiKey={process.env.NEXT_PUBLIC_APIKEY}
+    //   onDataChange={handleDataChange}
+    // />
+  //);
 };
 
 export default DataCastSwiper;

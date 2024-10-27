@@ -30,60 +30,62 @@ const DetailsPage = async ({ params }) => {
 
   return (
     <>
-      <div
-        className="relative w-full h-screen text-white"
+<div
+  className="relative w-full h-screen text-white"
+  style={{
+    backgroundImage: `url(${imageBackdrop})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
+  }}
+>
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
+  <div className="relative z-20 flex flex-col items-center justify-center h-full px-4 py-6 md:flex-row md:justify-start">
+    <div className="animate-fade-in mt-10 mb-6 md:mb-0 md:mr-8">
+      <Image
+        src={imageUrl}
+        alt={title}
+        width={180} // Smaller width for mobile
+        height={270} // Maintain aspect ratio
+        className="rounded-lg shadow-lg mt-12 md:w-64 md:h-auto"
         style={{
-          backgroundImage: `url(${imageBackdrop})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          objectFit: "cover",
         }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
-        <div className="relative z-20 flex flex-col items-center justify-center h-full px-6 py-8 md:flex-row md:justify-start">
-          <div className="animate-fade-in mb-6 md:mb-0 md:mr-8">
-            <Image
-              src={imageUrl}
-              alt={title}
-              width={300}
-              height={450}
-              className="rounded-lg shadow-lg"
-              style={{
-                objectFit: "cover",
-              }}
-            />
-          </div>
-          <div className="text-left max-w-2xl animate-fade-in-delayed p-6 bg-black bg-opacity-50 rounded-lg">
-            <h1 className="text-4xl font-bold mb-4 text-amber-400">
-              {title} <span className="text-white">({year})</span>
-            </h1>
-            <p className="text-lg mb-4">
-              <span className="font-bold text-amber-400">Language:</span>{" "}
-              {original_language}
-            </p>
-            <p className="text-lg mb-4">
-              <span className="font-bold text-amber-400">Overview:</span>{" "}
-              {overview}
-            </p>
-            <p className="text-lg mb-4 text-left">
-              <span className="font-bold text-amber-400">Rating:</span>{" "}
-              {vote_average ? vote_average.toFixed(1) : "N/A"}
-            </p>
-            <p className="text-lg mb-4 text-left">
-              <span className="font-bold text-amber-400">Budget:</span> $
-              {budget.toLocaleString()}
-            </p>
-            <p className="text-lg mb-4 text-left">
-              <span className="font-bold text-amber-400">Revenue:</span> $
-              {revenue.toLocaleString()}
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="py-8 bg-gray-900">
-        <DataCastSwiper id={id} mediaType="movie" />
-      </div>
+      />
+    </div>
+    <div className="text-left max-w-xl animate-fade-in-delayed p-4 md:p-6 bg-black bg-opacity-50 rounded-lg w-full md:w-auto">
+      <h1 className="text-xl md:text-4xl font-bold mb-2 md:mb-4 text-amber-400">
+        {title} <span className="text-white">({year})</span>
+      </h1>
+      <p className="text-sm md:text-lg mb-2 md:mb-4">
+        <span className="font-bold text-amber-400">Language:</span>{" "}
+        {original_language}
+      </p>
+      <p className="text-sm md:text-lg mb-2 md:mb-4">
+        <span className="font-bold text-amber-400">Overview:</span>{" "}
+        {overview}
+      </p>
+      <p className="text-sm md:text-lg mb-2 md:mb-4">
+        <span className="font-bold text-amber-400">Rating:</span>{" "}
+        {vote_average ? vote_average.toFixed(1) : "N/A"}
+      </p>
+      <p className="text-sm md:text-lg mb-2 md:mb-4">
+        <span className="font-bold text-amber-400">Budget:</span> $
+        {budget.toLocaleString()}
+      </p>
+      <p className="text-sm md:text-lg mb-2 md:mb-4">
+        <span className="font-bold text-amber-400">Revenue:</span> $
+        {revenue.toLocaleString()}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div className="py-4 bg-gray-900">
+  <DataCastSwiper id={id} mediaType="movie" />
+</div>
+
     </>
   );
 };
