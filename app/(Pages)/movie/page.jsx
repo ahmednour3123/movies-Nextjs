@@ -13,7 +13,7 @@ const MoviesPage = ({ movie }) => {
   return (
     <div>
       <div className="flex items-center justify-center gap-x-3">
-        <h1 className="text-2xl text-center cursor-pointer text-white font-Righeous">
+        <h1 className="text-2xl text-center cursor-pointer text-gray-500 font-Righeous">
           TRENDING:{" "}
         </h1>
         <h1

@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={"min-h-screen " + barlow.className}>
         <NextAuthProvider>
-          <header className="sticky top-0 z-50 text-3xl sm:text-md md:text-xl lg:text-lg xl:text-xl lg:justify-self-start">
+          <header className="sticky top-0 z-50 text-3xl sm:text-md md:text-xl lg:text-lg xl:text-xl lg:justify-self-start w-full">
             <Navbar />
           </header>
           {children}

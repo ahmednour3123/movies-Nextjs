@@ -38,14 +38,14 @@ const Navbar = () => {
 
   return (
     <nav
-    className={`z-50 transition-all duration-300 bg-gray-800 ${
-      isScrolled ? " shadow-lg w-screen" : "bg-transparent w-full"
+    className={`z-50 w-100 transition-all duration-300 bg-black ${
+      isScrolled ? "bg-black shadow-lg w-screen w-100" : "bg-black w-full"
     }`}
   >
     <div className="max-w-screen-2xl mx-auto flex items-center justify-between p-4">
       <Link href={"/"} className="flex items-center">
         <Image src={logo} width={50} height={50} alt="Logo" />
-        <span className="ml-3 text-2xl font-semibold text-gray-300">
+        <span className="ml-3 text-2xl font-semibold text-red-500">
           Cinema App
         </span>
       </Link>
@@ -54,7 +54,7 @@ const Navbar = () => {
           <Link
             href={link.href}
             key={link.title}
-            className="text-gray-300 hover:text-yellow-600 transition-colors duration-300"
+            className="text-white hover:text-yellow-600 transition-colors duration-300"
           >
             {link.title}
           </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
         isMobileMenuOpen ? "block" : "hidden"
       }`}
     >
-      <div className="flex flex-col items-center space-y-4 bg-white shadow-lg rounded-lg p-4">
+      <div className="flex flex-col items-center space-y-4 bg-black shadow-lg rounded-lg p-4">
         {links.map((link) => (
           <Link
             className="text-gray-800 hover:text-yellow-600 transition-colors duration-300"

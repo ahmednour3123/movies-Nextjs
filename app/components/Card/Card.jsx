@@ -31,12 +31,12 @@ const Card = ({ item }) => {
             className="banner-image "
             style={{ backgroundImage: `url(${imageUrl})` }}
           ></div>
-          <h1 className="sm:text-xs lg:text-sm">
+          <h1 className="sm:text-xs lg:text-xl">
             {" "}
             {title || original_name || original_title}
           </h1>
-          <p className="line-clamp-3">{overview}</p>
-          <p>Release Date {release_date || first_air_date}</p>
+          <p className="line-clamp-3 lg:text-lg sm:text-xs">{overview}</p>
+          <p className="text-sm ">Release Date {release_date || first_air_date}</p>
         </div>
       </div>
     </Link>
