@@ -77,7 +77,7 @@ const Navbar = () => {
       <div className="flex flex-col items-center space-y-4 bg-black shadow-lg rounded-lg p-4">
         {links.map((link) => (
           <Link
-            className="text-gray-800 hover:text-yellow-600 transition-colors duration-300"
+            className="text-white hover:text-yellow-600 transition-colors duration-300"
             href={link.href}
             key={link.title}
             onClick={handlelinkClick}
